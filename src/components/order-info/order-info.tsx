@@ -17,7 +17,6 @@ export const OrderInfo: FC = () => {
   );
 
   const id = useParams().number;
-
   const dispatch = useDispatch();
 
   useEffect(() => {

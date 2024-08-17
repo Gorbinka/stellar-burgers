@@ -19,10 +19,12 @@ export const Feed: FC = () => {
     return <Preloader />;
   }
 
-  <FeedUI
-    orders={orders}
-    handleGetFeeds={() => {
-      dispatch(fetchFeed());
-    }}
-  />;
+  return (
+    <FeedUI
+      orders={orders}
+      handleGetFeeds={() => {
+        dispatch(fetchFeed());
+      }}
+    />
+  );
 };

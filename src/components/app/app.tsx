@@ -1,36 +1,28 @@
 import {
   ConstructorPage,
   Feed,
-  Login,
-  Register,
   ForgotPassword,
-  ResetPassword,
+  Login,
+  NotFound404,
   Profile,
   ProfileOrders,
-  NotFound404
-} from '../../pages';
-
+  Register,
+  ResetPassword
+} from '@pages';
 import '../../index.css';
-import styles from './app.module.css';
-
 import { useEffect } from 'react';
+import styles from './app.module.css';
 import { useDispatch } from '../../services/store';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import { ProtectedRoute } from '../protected-route/protected-route';
-import {
-  AppHeader,
-  IngredientDetails,
-  Modal,
-  OrderInfo
-} from '../../components';
-
 import { fetchUser } from '../../services/slices/userSlice';
+import { ProtectedRoute } from '../protected-route/protected-route';
 import { fetchIngredients } from '../../services/slices/ingredientsSlice';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { AppHeader, IngredientDetails, Modal, OrderInfo } from '@components';
 
 const App = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const location = useLocation();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const background = location.state && location.state.background;
 
@@ -70,6 +62,8 @@ const App = () => {
           }
         />
         <Route path='/ingredients/:id' element={<IngredientDetails />} />
+        <Route path='/feed/:number' element={<OrderInfo />} />
+        <Route path='/profile/orders/:number' element={<OrderInfo />} />
         <Route path='*' element={<NotFound404 />} />
       </Routes>
 
