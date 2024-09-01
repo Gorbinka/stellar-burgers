@@ -17,7 +17,7 @@ const testIngredient: TConstructorIngredient = {
   image: 'test-image-url',
   image_mobile: 'test-image-url',
   image_large: 'test-image-url',
-  id: createId() // Генерируем id
+  id: createId()
 };
 
 const bunIngredient: TConstructorIngredient = {
