@@ -1,4 +1,4 @@
-import { TIngredient } from '../../utils/types';
+import { TIngredient } from '@utils-types';
 import reducer, { fetchIngredients } from '../slices/ingredientsSlice';
 
 type TIngredientsState = {
@@ -43,7 +43,7 @@ describe('ingredients reducer', () => {
   });
 
   it('должен сохранить ошибку и установить isLoading в false при выполнении fetchIngredients.rejected', () => {
-    const error = 'Failed to fetch';
+    const error = 'Неизвестная ошибка';
     const action = fetchIngredients.rejected(new Error(), '', undefined, error);
     const state = reducer(initialState, action);
     expect(state.error).toBe(error);
