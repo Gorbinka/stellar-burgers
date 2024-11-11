@@ -14,8 +14,7 @@
   React, React Router, Хуки(useState, useEffect, useRef, useContext, useMemo), Redux
 
   ## Инструкция по запуску: 
-  1)Склонировать репозиторий
-  2)Выполнить команду npm i
-  3)Создать фал .env и перенести в него содержимое файла .env.example
-  4)Выполнить команду npm run start
-  
+  1) Склонировать репозиторий
+  2) Выполнить команду npm i
+  3) Создать фал .env и перенести в него содержимое файла .env.example
+  4) Выполнить команду npm run start
